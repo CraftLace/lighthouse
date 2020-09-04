@@ -3,32 +3,18 @@
 <router-outlet></router-outlet> -->
 
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" opened>
+    <mat-sidenav #sidenav mode="side" opened class="bgside">
         <app-sidebar></app-sidebar>
-        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
-        <p>
-            <!-- <mat-radio-group class="example-radio-group" [formControl]="mode">
-                <label>Mode:</label>
-                <mat-radio-button value="over">Over</mat-radio-button>
-                <mat-radio-button value="side">Side</mat-radio-button>
-                <mat-radio-button value="push">Push</mat-radio-button>
-            </mat-radio-group> -->
-        </p>
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
-        <mat-form-field class="example-form-field">
-            <mat-label>Clearable input</mat-label>
-            <input matInput type="text" [(ngModel)]="value">
-            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        <app-home></app-home>
-
-
-
+        <!-- <router-outlet></router-outlet> -->
+        <!-- <app-table></app-table> -->
+        <!-- <app-navigation></app-navigation> -->
+        <!-- <app-address-form></app-address-form> -->
+        <!-- <app-dashboard></app-dashboard> -->
+        <!-- <app-drag-drop></app-drag-drop> -->
+        <app-tree></app-tree>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

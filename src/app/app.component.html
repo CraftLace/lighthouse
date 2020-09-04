@@ -1,1 +1,40 @@
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<app-home></app-home>
+<router-outlet></router-outlet> -->
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened>
+        <app-sidebar></app-sidebar>
+        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+        <p>
+            <!-- <mat-radio-group class="example-radio-group" [formControl]="mode">
+                <label>Mode:</label>
+                <mat-radio-button value="over">Over</mat-radio-button>
+                <mat-radio-button value="side">Side</mat-radio-button>
+                <mat-radio-button value="push">Push</mat-radio-button>
+            </mat-radio-group> -->
+        </p>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+        <mat-form-field class="example-form-field">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <app-home></app-home>
+
+
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

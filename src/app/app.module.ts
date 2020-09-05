@@ -34,8 +34,9 @@ import { TreeComponent } from './tree/tree.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, FavoritosComponent, SiguiendoComponent, TableComponent, NavigationComponent, AddressFormComponent, DashboardComponent, TreeComponent, DragDropComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, FavoritosComponent, SiguiendoComponent, TableComponent, NavigationComponent, AddressFormComponent, DashboardComponent, TreeComponent, DragDropComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     FormsModule,

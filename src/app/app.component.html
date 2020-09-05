@@ -6,19 +6,29 @@
     <mat-sidenav #sidenav mode="side" opened class="bgside">
         <app-sidebar></app-sidebar>
     </mat-sidenav>
-
-    <mat-sidenav-content>
+    <mat-sidenav-content class="example-container">
         <!-- <router-outlet></router-outlet> -->
         <!-- <app-table></app-table> -->
         <!-- <app-navigation></app-navigation> -->
         <!-- <app-address-form></app-address-form> -->
         <!-- <app-dashboard></app-dashboard> -->
         <!-- <app-drag-drop></app-drag-drop> -->
-        <app-tree></app-tree>
+        <!-- <app-tree></app-tree> -->
+
+
+
+        <router-outlet></router-outlet>
+
+
+
     </mat-sidenav-content>
+
 </mat-sidenav-container>
 
-<!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
+<!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> 
+
+
+-->
 
 
 <!-- Copyright 2020 Google LLC. All Rights Reserved.

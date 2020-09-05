@@ -1,3 +1,4 @@
+@import '../../../scss/variables';
 #test {
     padding: 12px;
     display: flex;
@@ -12,4 +13,80 @@ p {
     font-size: 20px;
     color: red;
     text-align: center;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.con {
+    position: fixed;
+    margin-bottom: 30px;
+    // padding-bottom: 30px;
+    //top: 0;
+    // height: 1800px;
+}
+
+.bt {
+    margin-top: 3%;
+}
+
+.search-bar {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 10%;
+    input {
+        display: block;
+        width: 100%;
+        background-color: darken($primary-color, 4);
+        border: 1px solid darken($primary-color, 4);
+        color: $primary-title;
+        padding: 1.5em;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        padding-left: 4em;
+        &::-webkit-input-placeholder {
+            color: $primary-color-light;
+        }
+        &:-ms-input-placeholder {
+            color: $primary-color-light;
+        }
+        &::placeholder {
+            color: $primary-color-light;
+        }
+        &:focus {
+            outline: none !important;
+            border: 1px solid $primary-color-light;
+        }
+    }
+    img {
+        position: absolute;
+        top: calc(50% - 1em);
+        left: 1em;
+        width: 2em;
+    }
+}
+
+.main-container {
+    //display: flex;
+    //height: 500px;
+    //position: fixed;
+    //justify-content: flex-start;
+    // flex-direction: row;
+    margin-top: 8%;
+}
+
+.genres-list {
+    position: fixed;
+    padding-bottom: 3%;
+    padding: 1em;
+    width: 15%;
+    background-color: $primary-color-dark;
+    color: $primary-color-light;
+    hr {
+        border: none;
+        height: 1px;
+    }
 }

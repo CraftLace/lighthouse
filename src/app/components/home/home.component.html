@@ -1,5 +1,24 @@
-<ng-container *ngFor="let item of ['2','2','2','3','2','2','2','3','2','2','2','3','2','2','2','3','2','2','2','3']">
-    <div class="test">
-        <p>{{item}}</p>
+<ng-container>
+    <!-- <mat-toolbar color="primary" class="con">
+        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button> 
+    
+    </mat-toolbar> -->
+    <div class="search-bar">
+        <img src="assets/icons/search.svg" alt="search icon">
+        <input [(ngModel)]="searchText" name="searchText" type="search" placeholder="Search" aria-label="Search">
     </div>
+    <!-- <div class="test" *ngFor="let item of ['2','2','2','3','2','2','2','3','2','2','2','3','2','2','2','3','2','2','2','3']">
+        <p>{{item}}</p>
+    </div> -->
+    <app-table></app-table>
 </ng-container>

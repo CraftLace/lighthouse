@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = 'https://lighthouse-backend-api.herokuapp.com/api/recursos';
+  private URL = 'https://lighthouse-backend-api.herokuapp.com/api';
   constructor(private http: HttpClient, private router: Router) { }
 
   signUpUser(user) {

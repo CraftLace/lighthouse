@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  searchText;
-  mode = new FormControl('over');
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some((h) =>
-    h.test(window.location.host)
-  );
-  title = 'lighthouse';
-  value = 'Clear me';
+export class AppComponent implements OnInit {
+  jokes = [];
+  isLoading = false;
+  constructor() {}
+  ngOnInit() {
+    
+  }
+
+
 }

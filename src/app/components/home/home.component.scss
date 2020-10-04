@@ -1,92 +1,131 @@
-@import '../../../scss/variables';
-#test {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: verdana;
-    font-size: 20px;
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-p {
-    font-family: verdana;
-    font-size: 20px;
-    color: red;
-    text-align: center;
+html,
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #000;
 }
 
-.example-spacer {
-    flex: 1 1 auto;
+label {
+    position: relative;
+    height: 125px;
+    width: 125px;
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-left-color: #5cb85c;
+    animation: rotate 1.2s linear infinite;
 }
 
-.con {
-    position: fixed;
-    margin-bottom: 30px;
-    // padding-bottom: 30px;
-    //top: 0;
-    // height: 1800px;
-}
-
-.bt {
-    margin-top: 3%;
-}
-
-.search-bar {
-    position: fixed;
-    width: 100%;
-    height: 10%;
-    margin-bottom: 10%;
-    input {
-        display: block;
-        width: 100%;
-        background-color: darken($primary-color, 4);
-        border: 1px solid darken($primary-color, 4);
-        color: $primary-title;
-        padding: 1.5em;
-        border: none;
-        outline: none;
-        font-size: 1em;
-        padding-left: 4em;
-        &::-webkit-input-placeholder {
-            color: $primary-color-light;
-        }
-        &:-ms-input-placeholder {
-            color: $primary-color-light;
-        }
-        &::placeholder {
-            color: $primary-color-light;
-        }
-        &:focus {
-            outline: none !important;
-            border: 1px solid $primary-color-light;
-        }
+@keyframes rotate {
+    50% {
+        border-left-color: #9b59b6;
     }
-    img {
-        position: absolute;
-        top: calc(50% - 1em);
-        left: 1em;
-        width: 2em;
+    75% {
+        border-left-color: #e67e22;
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
-.main-container {
-    //display: flex;
-    //height: 500px;
-    //position: fixed;
-    //justify-content: flex-start;
-    // flex-direction: row;
-    margin-top: 8%;
+label .check-icon {
+    display: none;
 }
 
-.genres-list {
-    position: fixed;
-    padding-bottom: 3%;
-    padding: 1em;
-    width: 15%;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
-    hr {
-        border: none;
-        height: 1px;
+label .check-icon:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 28px;
+    transform: scaleX(-1) rotate(135deg);
+    height: 56px;
+    width: 28px;
+    border-top: 4px solid #5cb85c;
+    border-right: 4px solid #5cb85c;
+    transform-origin: left top;
+    animation: check-icon 0.8s ease;
+}
+
+@keyframes check-icon {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 1;
     }
+    20% {
+        height: 0;
+        width: 28px;
+        opacity: 1;
+    }
+    40% {
+        height: 56px;
+        width: 28px;
+        opacity: 1;
+    }
+    100% {
+        height: 56px;
+        width: 28px;
+        opacity: 1;
+    }
+}
+
+input {
+    display: none;
+}
+
+input:checked~label .check-icon {
+    display: block;
+}
+
+input:checked~label {
+    animation: none;
+    border-color: #5cb85c;
+    transition: border 0.5s ease-out;
+}
+
+.jumbotron {
+    background-image: url("../../../assets/undraw_project_team_lc5a.svg");
+    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    // display: block;
+    // margin-left: 30%;
+    // margin-top: 60px;
+    // background: red;
+    //  background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    // 
+    //background-color: #cccccc;
+    background-repeat: no-repeat;
+}
+
+.jumbotron h1 {
+    color: white;
+}
+
+.jumbotron p {
+    color: whitesmoke;
+}
+
+// .card-img {
+//     height: 600px;
+//     width: 100vw;
+//     background: black;
+//     overflow: hidden;
+//     background: #C33764;
+//     //  background-position: left;
+//     //  position: fixed;
+//     /* fallback colour. Make sure this is just one solid colour. */
+//     background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../assets/undraw_project_team_lc5a.svg");
+//     background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../assets/undraw_project_team_lc5a.svg");
+//     /* The least supported option. */
+// }
+img {
+    object-position: left;
 }

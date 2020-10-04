@@ -1,0 +1,27 @@
+<h1>
+    Recursos para <span>Informaticos</span></h1>
+<hr>
+<input type="checkbox" id="check">
+<label for="check" *ngIf="loading==true">
+      <div class="check-icon">
+</div>
+</label>
+
+<div class="card-columns" *ngIf="loading==false">
+    <div class="card" *ngFor="let data of recursos let i=index">
+        <img src="{{data.imagen}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{data.nombre}}</h5>
+            <p class="card-text">{{data.descripcion}}</p>
+            <button type="button" class="btn btn-primary btn-block" (click)="abrirdata(i)"> Abrir</button>
+            <hr>
+            <div *ngFor="let genre of data.etiquetas ">
+                <a class="tag" *ngIf="genre!==''">
+                    {{genre}} 
+                </a>
+            </div>
+            <!-- <p class="card-text">02/10/2020</p> -->
+        </div>
+    </div>
+
+</div>

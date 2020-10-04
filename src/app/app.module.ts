@@ -1,68 +1,56 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { MatSliderModule } from '@angular/material/slider';
-import { DemoMaterialModule } from "./material-module";
+import { ReactiveFormsModule } from '@angular/forms';
+//Componentes
+
+import { PlataformaComponent } from './components/plataforma/plataforma.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { FavoritosComponent } from './components/favoritos/favoritos.component';
-import { SiguiendoComponent } from './components/siguiendo/siguiendo.component';
-import { TableComponent } from './table/table.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { NavigationComponent } from './navigation/navigation.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { AddressFormComponent } from './address-form/address-form.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCardModule } from '@angular/material/card';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatMenuModule } from '@angular/material/menu';
-import { TreeComponent } from './tree/tree.component';
-import { MatTreeModule } from '@angular/material/tree';
-import { DragDropComponent } from './drag-drop/drag-drop.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { RecursosComponent } from './components/recursos/recursos.component';
+import { AboutComponent } from './components/about/about.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AgregarrecursoComponent } from './components/agregarrecurso/agregarrecurso.component';
+import { LoginComponent } from './components/login/login.component'; // <-- NgModel lives here
+
+import { AuthGuard } from './guard/auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { RecursodataComponent } from './components/recursodata/recursodata.component';
+import { EditrecursoComponent } from './components/editrecurso/editrecurso.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, FavoritosComponent, SiguiendoComponent, TableComponent, NavigationComponent, AddressFormComponent, DashboardComponent, TreeComponent, DragDropComponent, ToolbarComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    DemoMaterialModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCardModule,
-    MatGridListModule,
-    MatMenuModule,
-    MatTreeModule,
-    DragDropModule,
+  declarations: [
+    AppComponent,
+    PlataformaComponent,
+    HomeComponent,
+    RecursosComponent,
+    AboutComponent,
+    NavbarComponent,
+    AgregarrecursoComponent,
+    LoginComponent,
+    RecursodataComponent,
+    EditrecursoComponent,
+    BuscarComponent,
+    FilterPipe,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
+  ],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -12,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class AgregarrecursoComponent implements OnInit {
   data = {
-    nombre: ' ',
-    imagen: ' ',
-    descripcion: ' ',
+    nombre: '',
+    imagen: '',
+    descripcion: '',
     links: [
-      {Plataforma: 'Telegram', url: ''},
+      {Plataforma: 'Platzi', url: ''},
       {Plataforma: 'Mega', url: ''},
       {Plataforma: 'Google Drive', url: ''},
       {Plataforma: 'Mediafire', url: ''}
@@ -27,7 +27,10 @@ export class AgregarrecursoComponent implements OnInit {
   ngOnInit() {}
   addrecurso() {
     console.log(this.data)
-    this.enviarrecurso(this.data);
+    if(this.data.nombre.length>=10){
+      this.enviarrecurso(this.data);  
+    }else{alert("El recurso no tine nombre mayor de 10 caracteres")}
+    
   }
   enviarrecurso(data) {
     this.ds.postdata(data).subscribe(
